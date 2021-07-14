@@ -1,0 +1,20 @@
+$ORIGIN {{ domain }}.
+$TTL    1w
+{{ domain }}.       IN      SOA     {{ ansible_fqdn }}. shailendra.{{ domain }}. (
+                        3               ; Serial
+                        1w              ; Refresh
+                        1d              ; Retry
+                        28d             ; Expire
+                        1w)     ; Negative Cache TTL
+
+; name servers - NS records
+                IN      NS      {{ ansible_fqdn }}.
+
+; name servers - A records
+{{ ansible_fqdn }}.          IN      A       {{ ansible_facts.default_ipv4.address }}
+
+
+; {{ sub_range }} - A records
+{% for node in mappings %}
+{{ node.host }}.{{ domain }}.	IN	A	{{ node.ip }}
+{% endfor %}
