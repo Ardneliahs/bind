@@ -1,7 +1,7 @@
 BIND
 ---------
 
-This role installs bind server on Debian.
+This role installs bind server on Debian or centos.
 
 
 Role Variables
