@@ -14,7 +14,7 @@ vars are defined in vars/main.yaml for bind.
 Example Playbook
 ----------------
 
-	- name: Set up Bind
+	- name: Set up Bind server
 
 	  hosts: bind
 
