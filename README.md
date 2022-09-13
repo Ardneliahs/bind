@@ -7,7 +7,7 @@ This role installs bind server on Debian.
 Role Variables
 --------------
 
-vars are defined in vars/main.yaml
+vars are defined in vars/main.yaml for bind.
 
 
 
